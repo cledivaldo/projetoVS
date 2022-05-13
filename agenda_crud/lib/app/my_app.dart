@@ -1,8 +1,11 @@
-import 'package:agenda_crud/app/view/my_home_page.dart';
+import 'package:agenda_crud/app/view/contact_frm.dart';
+import 'package:agenda_crud/app/view/contact_list.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  static const home = '/';
+  static const contactFrm = 'contact-frm';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,7 +13,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter'),
+      //home: const ContactList(),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        home: (context) => ContactList(),
+        contactFrm: (context) => const ContactFrm(),
+      },
     );
   }
 }
